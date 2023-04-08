@@ -1,3 +1,5 @@
+using DevFramework.Core.Utilities.Mvc.Infrastructure;
+using MemberRegitration.Business.DeppendencyResolvers.Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace MemberRegistration.MvcWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }
     }
 }

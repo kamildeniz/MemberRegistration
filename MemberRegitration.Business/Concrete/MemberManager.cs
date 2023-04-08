@@ -29,7 +29,7 @@ namespace MemberRegitration.Business.Concrete
            
             if (_kpsService.ValidateUser(member) == false)
             {
-                throw new Exception("Kullanıcı Doğrulamqası Geçerli Değil");
+                throw new Exception("Kullanıcı Doğrulaması Geçerli Değil");
             }
             _memberDal.Add(member);
 
